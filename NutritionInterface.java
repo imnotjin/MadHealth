@@ -1,4 +1,4 @@
 public interface NutritionInterface{
-    public void getNutrient();
-    public void getAmountPerServing();
+    public String getNutrient();
+    public float getAmountPerServing();
 }
