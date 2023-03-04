@@ -6,7 +6,6 @@ public class MadHealthBackend implements MadHealthBackendInterface{
     private Hashtable<String, NutritionInterface> hashtable;
     private ArrayList<String> foodConsumed;
 
-
     public void loadData() {
 
     }
