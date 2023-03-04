@@ -1,0 +1,30 @@
+import requests
+import json
+
+# Set up API key and endpoint URLs
+API_KEY = 'iozvUIs2rWYXQ2lfItOoCcb3fXc3zMbaHEmR2tgZ'
+SEARCH_ENDPOINT = 'https://api.nal.usda.gov/fdc/v1/search'
+NUTRITION_ENDPOINT = 'https://api.nal.usda.gov/fdc/v1/{food_id}'
+
+# Get the food item from the user
+food_item = input('Enter a food item: ')
+
+# Make a search request to find the FDC ID for the food item
+params = {'api_key': API_KEY, 'generalSearchInput': food_item}
+response = requests.get(SEARCH_ENDPOINT, params=params)
+data = json.loads(response.text)
+fdc_id = data['foods'][0]['fdcId']
+
+# Make a nutrition request to obtain the nutritional information for the food item
+url = NUTRITION_ENDPOINT.format(food_id=fdc_id)
+params = {'api_key': API_KEY}
+response = requests.get(url, params=params)
+data = json.loads(response.text)
+
+# Extract the relevant nutritional information from the response
+nutrients = data['foodNutrients']
+for nutrient in nutrients:
+    name = nutrient['nutrientName']
+    value = nutrient['value']
+    unit = nutrient['unitName']
+    print(f'{name}: {value} {unit}')
