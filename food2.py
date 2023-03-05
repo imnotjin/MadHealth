@@ -12,7 +12,7 @@ cho = 0
 pro = 0
 bf = 0
 # Get the food item from the user
-NAME = input("Enter your name")
+NAME = input("Enter your username")
 Age = int(input("Enter your age"))
 Weight = int(input("Enter your weight in kilograms"))
 Height = int(input("Enter your height in centimeters"))
@@ -65,7 +65,7 @@ print("total calories "+str(Calories)+"Kcal")
 print("Total Cholesterol "+str(cho)+"mg")
 print("Total Protein "+str(pro)+"g")
 print("Unhealthy fats "+str(bf)+"g\n")
-print("Hey,"+NAME)
+print("Hey, "+NAME)
 if 0.07*Calories < 9*bf:
     print("You must decrease your intake of saturated and trans fatty acids")
 if cho > 300:
