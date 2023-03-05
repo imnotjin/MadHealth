@@ -60,12 +60,12 @@ while food_item != "exit":
         if name == ('Fatty acids, total saturated' or 'Fatty acids, total trans'):
             bf = value*s + bf
         print(f'{name}: {value} {unit}')
-print("total carbs "+str(carbs)+"g")
-print("total calories "+str(Calories)+"Kcal")
+print("Total carbs "+str(carbs)+"g")
+print("Total calories "+str(Calories)+"Kcal")
 print("Total Cholesterol "+str(cho)+"mg")
 print("Total Protein "+str(pro)+"g")
 print("Unhealthy fats "+str(bf)+"g")
-if 0.07*Calories <= 9*bf:
+if 0.07*Calories < 9*bf:
     print("You must decrease your intake of saturated and trans fatty acids")
 
 if gender == 'm':
