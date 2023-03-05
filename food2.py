@@ -30,7 +30,7 @@ while food_item != "exit":
     data = json.loads(response.text)
     if len(data['foods']) == 0:
         print("The food you are looking for is not in the database")
-        sys.exit(1)
+        continue
     else:
         fdc_id = data['foods'][0]['fdcId']
 
@@ -64,22 +64,30 @@ print("total carbs "+str(carbs)+"g")
 print("total calories "+str(Calories)+"Kcal")
 print("Total Cholesterol "+str(cho)+"mg")
 print("Total Protein "+str(pro)+"g")
-print("Unhealthy fats "+str(bf)+"g")
+print("Unhealthy fats "+str(bf)+"g\n")
 print("Hey,"+NAME)
 if 0.07*Calories < 9*bf:
     print("You must decrease your intake of saturated and trans fatty acids")
-elif gender == 'm':
+if cho > 300:
+    print("You have eaten too much cholesterol today")
+if gender == 'm':
     if((9.99*Weight)+(6.25*Height)-(4.92*Age)+5) < Calories:
         print("You are overeating your calories")
         eat = ((9.99*Weight)+(6.25*Height)-(4.92*Age)+5)
-        print("You must eat "+str(eat))
+        print("You must eat "+str(eat)+". You are overeating by "+str(Calories-eat))
     else:
         print("you are all good")
-elif gender == 'f':
+
+if 1.8*Weight > pro > 0.8*Weight:
+    print("You are in your fda recommended protein range")
+else:
+    print("You are beyond your FDA recommended range")
+
+if gender == 'f':
     if ((9.99 * Weight) + (6.25 * Height) - (4.92 * Age)-161) < Calories:
         print("You are overeating your calories")
         eat = ((9.99 * Weight) + (6.25 * Height) - (4.92 * Age)-161)
-        print("You must eat " + str(eat))
+        print("You must eat " + str(eat)+". You are overeating by "+str(Calories-eat))
     else:
         print("you are all good")
 else:
