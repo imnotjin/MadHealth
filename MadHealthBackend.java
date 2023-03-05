@@ -7,7 +7,7 @@ public class MadHealthBackend implements MadHealthBackendInterface{
     private ArrayList<String> foodConsumed;
 
     public void loadData() {
-
+        
     }
 
     public List<String> findFoods() {
