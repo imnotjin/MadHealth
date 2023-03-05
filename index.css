@@ -1,0 +1,49 @@
+.account-prompt {
+  top: 50%;
+  left: 50%;
+  width: 30em;
+  height: 22em;
+  margin-top: -9em;
+  margin-left: -15em;
+  border: 1px solid #666;
+  background-color: #acecfa;
+  position: fixed;
+}
+
+.welcome-text {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.grid-container {
+  text-align: center;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 30px;
+}
+
+.data-text {
+  margin-left: 50px;
+}
+
+.user-data {
+  height: 50%;
+  align-self: center;
+}
+
+.gender-select {
+  height: 60.33%;
+  align-self: center;
+}
+
+.submit-button {
+  display: block;
+  margin: auto;
+  height: 50px;
+  width: 150px;
+  background-color: #c23d1f;
+  border-color: rgb(234, 227, 227);
+  border-style:solid;
+  border-radius: 15px;
+  color: white;
+}
