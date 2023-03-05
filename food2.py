@@ -12,7 +12,7 @@ cho = 0
 pro = 0
 bf = 0
 # Get the food item from the user
-name = input("Enter your name")
+NAME = input("Enter your name")
 Age = int(input("Enter your age"))
 Weight = int(input("Enter your weight in kilograms"))
 Height = int(input("Enter your height in centimeters"))
@@ -49,7 +49,7 @@ while food_item != "exit":
         name = sorted_Nutrients[i]['nutrient']['name']
         value = sorted_Nutrients[i].get('amount', 0)
         unit = sorted_Nutrients[i]['nutrient']['unitName']
-        if name == 'Energy': #or  or 'Carbohydrate' or 'Cholesterol' or 'Fatty acids, total monounsaturated' or 'Fatty acids, total polyunsaturated' or 'Fatty acids, total saturated' or 'Fatty acids, total trans' or 'Fiber' or 'Iron' or 'Protein' or 'Sodium' or 'Sugars' or 'Fat' or 'Vitamin A' or 'Vitamin C'):
+        if name == 'Energy':
             Calories = value*s+Calories
         if name == 'Carbohydrate, by difference':
             carbs = value*s + carbs
@@ -60,21 +60,27 @@ while food_item != "exit":
         if name == ('Fatty acids, total saturated' or 'Fatty acids, total trans'):
             bf = value*s + bf
         print(f'{name}: {value} {unit}')
-print("Total carbs "+str(carbs)+"g")
-print("Total calories "+str(Calories)+"Kcal")
+print("total carbs "+str(carbs)+"g")
+print("total calories "+str(Calories)+"Kcal")
 print("Total Cholesterol "+str(cho)+"mg")
 print("Total Protein "+str(pro)+"g")
 print("Unhealthy fats "+str(bf)+"g")
+print("Hey,"+NAME)
 if 0.07*Calories < 9*bf:
     print("You must decrease your intake of saturated and trans fatty acids")
-
-if gender == 'm':
+elif gender == 'm':
     if((9.99*Weight)+(6.25*Height)-(4.92*Age)+5) < Calories:
         print("You are overeating your calories")
         eat = ((9.99*Weight)+(6.25*Height)-(4.92*Age)+5)
         print("You must eat "+str(eat))
-if gender == 'f':
-    if ((9.99 * Weight) + (6.25 * Height) + (4.92 * Age)-161) < Calories:
+    else:
+        print("you are all good")
+elif gender == 'f':
+    if ((9.99 * Weight) + (6.25 * Height) - (4.92 * Age)-161) < Calories:
         print("You are overeating your calories")
-        eat = ((9.99 * Weight) + (6.25 * Height) + (4.92 * Age)-161)
+        eat = ((9.99 * Weight) + (6.25 * Height) - (4.92 * Age)-161)
         print("You must eat " + str(eat))
+    else:
+        print("you are all good")
+else:
+    print("you are all good")
