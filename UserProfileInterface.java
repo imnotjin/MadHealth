@@ -1,6 +1,7 @@
 public interface UserProfileInterface {
-    public void getName();
-    public void getAge();
-    public void getWeight();
-    public void getGender();
+    public String getName();
+    public int getAge();
+    public float getWeight();
+    public float getHeight();
+    public String getGender();
 }
