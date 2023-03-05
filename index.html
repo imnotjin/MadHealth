@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MadHealth</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="accountPrompt" class="account-prompt">
+      <div class="welcome-text">Welcome to MadHealth</div>
+      <div class="grid-container">
+        <p class="data-text">Name:</p>
+        <input id="userName" class="user-data" type="text" />
+        <p class="data-text">Gender:</p>
+        <select id="userGender" class="gender-select">
+          <option value="Blank"></option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <p class="data-text">Age:</p>
+        <input id="userAge" class="user-data" type="text" />
+        <p class="data-text">Weight (lb):</p>
+        <input id="userWeight" class="user-data" type="text" />
+        <p class="data-text">Height (in):</p>
+        <input id="userHeight" class="user-data" type="text" />
+      </div>
+      <button id="submit" class="submit-button">Submit</button>
+    </div>
+
+    <script
+      src="index.js"
+      language="javascript"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
